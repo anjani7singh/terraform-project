@@ -1,14 +1,7 @@
 provider "aws" {
   region = "ap-south-1"
 }
-# variables:
 
-variable "vpc_cidr_block" {}
-variable "subnet_cidr_block" {}
-variable "environment" {}
-variable "my_ip" {}
-variable "instance_type" {}
-variable "az" {}
 # resources:
 
 resource "aws_vpc" "server_vpc" {
@@ -144,11 +137,3 @@ resource "aws_instance" "server-instance" {
 
 }
 
-output "aws_instance" {
-  value = aws_instance.server-instance.public_ip
-}
-/*
-output "aws_ami" {
-  value = data.aws_ami.latest-aws-linux-image
-}
-*/
